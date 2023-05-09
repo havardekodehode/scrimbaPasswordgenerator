@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <script defer src="index.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="title"><h1>Password Generator</h1></div>
+      <div class="mainmain">
+        <div class="passwordSetting">
+          <h3 class="settingName">Length:</h3>
+          <div class="slidecontainer">
+            <input
+              type="range"
+              min="1"
+              max="100"
+              value="50"
+              class="slider"
+              id="myRange"
+            />
+          </div>
+          <h3>Value: <span id="sliderValue"></span></h3>
+        </div>
+
+        <div class="passwordSetting">
+          <h3 class="settingName">Include numbers</h3>
+          <label class="switch">
+            <input
+              type="checkbox"
+              id="numbersCheck"
+              onclick="updateToggleState()"
+            />
+            <span class="sliderSquare"></span>
+          </label>
+        </div>
+        <div class="passwordSetting">
+          <h3 class="settingName">Include symbols</h3>
+          <label class="switch">
+            <input
+              type="checkbox"
+              id="symbolsCheck"
+              onclick="updateToggleState()"
+            />
+            <span class="sliderSquare"></span>
+          </label>
+        </div>
+      </div>
+      <div class="generateButton">
+        <button onclick="generate()">Genreate</button>
+      </div>
+
+      <div class="passwordcontainer">
+        <h2>Password 1</h2>
+        <h2>Password 2</h2>
+      </div>
+      <div class="passwordcontainer">
+        <p id="pass1El"></p>
+        <p id="pass2El"></p>
+      </div>
+      <div class="copyButtons">
+        <button onclick="copy1()">Copy</button>
+        <button onclick="copy2()">Copy</button>
+      </div>
+    </div>
+  </body>
+</html>

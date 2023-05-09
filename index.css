@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo&family=Roboto&display=swap");
+
+:root {
+  --body-bg-color: #212529;
+  --main-bg-color: #343a40;
+  --setting-bg-color: #d3d3d3;
+  --settingThumb-bg-color: #212529;
+  --button-bg-color: #ced4da;
+  /* PasswordSettingItems */
+  --slider-height: 20px;
+  --slider-width: ;
+  --slider-thumb-height: 18px;
+  --slider-thumb-width: 18px;
+  /* Fonts */
+  --h1-font: exo;
+  --h2-font: exo;
+  --h3-font: exo;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background-color: var(--body-bg-color);
+}
+
+.main {
+  background-color: var(--main-bg-color);
+  width: 600px;
+  margin: 100px auto;
+  padding: 10px;
+  height: 700px;
+}
+
+h1 {
+  color: #e9ecef;
+  text-shadow: 2px 2px 2px #212529;
+  font-family: var(--h1-font);
+}
+
+h2 {
+  font-family: var(--h3-font);
+}
+
+h3 {
+  color: #e9ecef;
+  text-shadow: 2px 2px 2px #212529;
+  padding-left: 20px;
+  font-family: var(--h3-font);
+}
+
+p {
+  text-align: center;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.mainmain {
+  display: block;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.passwordSetting {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.slidercontainer {
+  width: 100%;
+}
+
+.settingName {
+  padding-right: 50px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 200px;
+  height: var(--slider-height);
+  background: var(--setting-bg-color);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+  margin-top: 6px;
+}
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--slider-thumb-width);
+  height: var(--slider-thumb-height);
+  background: var(--settingThumb-bg-color);
+  cursor: pointer;
+}
+
+#sliderValue {
+  margin-left: 10px;
+  width: 50px;
+}
+
+.generateButton {
+  display: flex;
+  justify-content: center;
+  font-size: 10px;
+}
+
+.generateButton button {
+  color: #212529;
+  background-color: var(--button-bg-color);
+  padding: 10px 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.passwordcontainer {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+  color: #d3d3d3;
+}
+
+.passwordcontainer p {
+  background-color: #ced4da;
+  color: #343a40;
+  height: 100px;
+  width: 250px;
+}
+
+.copyButtons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.copyButtons button {
+  color: #212529;
+  background-color: var(--button-bg-color);
+  padding: 10px 50px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: var(--slider-height);
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.sliderSquare {
+  position: absolute;
+  cursor: pointer;
+  opacity: 0.7;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--setting-bg-color);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  width: 50px;
+}
+
+.sliderSquare:hover {
+  opacity: 1;
+}
+
+.sliderSquare:before {
+  position: absolute;
+  content: "";
+  height: var(--slider-thumb-height);
+  width: var(--slider-thumb-width);
+  left: 4px;
+  bottom: 0px;
+  top: 1px;
+  background: var(--settingThumb-bg-color);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .sliderSquare {
+  background-color: #2196f3;
+}
+
+input:focus + .sliderSquare {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .sliderSquare:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
