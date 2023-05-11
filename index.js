@@ -304,8 +304,8 @@ slider.oninput = function () {
   output.textContent = this.value;
 };
 
-let pass1El = document.getElementById("pass1El");
-let pass2El = document.getElementById("pass2El");
+const pass1El = document.getElementById("pass1El");
+const pass2El = document.getElementById("pass2El");
 let pass1 = "";
 let pass2 = "";
 let numCheck = document.getElementById("numbersCheck").checked;
@@ -336,6 +336,10 @@ function updateToggleState() {
   }
 }
 
+//Adding eventlisterners, which triggers the update funtion on click
+document.getElementById("numbersCheck").addEventListener("click", updateToggleState)
+document.getElementById("symbolsCheck").addEventListener("click", updateToggleState)
+
 function passwordgenerator(length) {
   for (i = 0; i < length; i++) {
     pass1 += charArr[Math.floor(Math.random(1) * charArr.length)];
@@ -351,13 +355,14 @@ function passwordgenerator(length) {
   }
 }
 
-function generate() {
+//Adding eventlisterner to the Generatebutton, which triggers which triggers the function underneath
+document.getElementById("generate-btn").addEventListener("click",function() {
   passwordgenerator(slider.value);
   pass1El.textContent = pass1;
   pass2El.textContent = pass2;
   pass1 = "";
   pass2 = "";
-}
+})
 
 function copy1() {
   console.log("hei");
@@ -374,3 +379,7 @@ function copy2() {
     "Copied the password starting with: " + pass2El.textContent.substring(0, 10)
   );
 }
+
+//Adding eventlisterners, which triggers copy funtion on click
+document.getElementById("copy1").addEventListener("click", copy1)
+document.getElementById("copy2").addEventListener("click", copy2)
