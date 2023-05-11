@@ -33,7 +33,6 @@
             <input
               type="checkbox"
               id="numbersCheck"
-              onclick="updateToggleState()"
             />
             <span class="sliderSquare"></span>
           </label>
@@ -44,14 +43,13 @@
             <input
               type="checkbox"
               id="symbolsCheck"
-              onclick="updateToggleState()"
             />
             <span class="sliderSquare"></span>
           </label>
         </div>
       </div>
       <div class="generateButton">
-        <button onclick="generate()">Genreate</button>
+        <button id="generate-btn">Genreate</button>
       </div>
 
       <div class="passwordcontainer">
@@ -63,8 +61,8 @@
         <p id="pass2El"></p>
       </div>
       <div class="copyButtons">
-        <button onclick="copy1()">Copy</button>
-        <button onclick="copy2()">Copy</button>
+        <button id="copy1">Copy</button>
+        <button id="copy2">Copy</button>
       </div>
     </div>
   </body>
